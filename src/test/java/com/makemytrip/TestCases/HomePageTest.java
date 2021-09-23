@@ -21,6 +21,8 @@ public class HomePageTest extends baseClass{
 		boolean logoIsDisplayed=hp.verifyLogo().isDisplayed();
 		
 		System.out.println("baseClassNavigation: ,Expected Value: true, Actual value: " + logoIsDisplayed);
+		System.out.println("git commit successfully done");
+		System.out.println("git commit successfully done");
 				
 	}
 
