@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Make My Trip]">
+  <test name="MakeMyTrip_Functional(failed)">
+    <classes>
+      <class name="com.makemytrip.TestCases.HomePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyLogo"/>
+          <include name="baseClassNavigation"/>
+          <include name="verifyLangCurrencyCountryDropdown"/>
+          <include name="verifySearchButton"/>
+        </methods>
+      </class> <!-- com.makemytrip.TestCases.HomePageTest -->
+    </classes>
+  </test> <!-- MakeMyTrip_Functional(failed) -->
+</suite> <!-- Failed suite [Make My Trip] -->
