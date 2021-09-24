@@ -15,6 +15,7 @@ public class HomePage {
 	
 
 	By Logo=By.xpath("//a[contains(@class,'mmtLogo makeFlex')]");
+	By autopopup=By.xpath("//div[contains(@class,'autopop__wrap')]");
 	By langCurrencyDropdown=By.xpath("//span[contains(@class,'switcherDownArrow')]");
 	By searchButton=By.xpath("//a[text()='Search']");
 	By country=By.xpath("//div[@class='searchListWrap']/p");
@@ -30,13 +31,21 @@ public class HomePage {
 		return driver.findElement(Logo);
 		
 	}
+	
+	public WebElement clickRuntimeAutoPopup()
+	{
+		return driver.findElement(autopopup);
+	}
+	
 	public WebElement verifyLangCurrencyCountry()
 	{
 		return driver.findElement(langCurrencyDropdown);
 		
 	}
-	/*public void verifyCountryList()
+	/*public List<WebElement> verifyCountryList()
 	{
+		return driver.findElements(country);
+		
 		Select dropdown = new Select(country);
 
 	    //Get all options
@@ -45,14 +54,13 @@ public class HomePage {
 	    {
 	        System.out.println(dd.get(j).getText());
 	    }
-		//return dd;
-*/	
+	}*/
 	
 	public WebElement serachButton()
 	{
 		return driver.findElement(searchButton);
 	}
 	
-	}
+}
 	
 

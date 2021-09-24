@@ -1,12 +1,7 @@
 package com.makemytrip.TestCases;
 
 import java.io.IOException;
-import java.util.List;
-
-import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -15,15 +10,17 @@ import com.makemytrip.PageObjects.HomePage;
 
 public class HomePageTest extends baseClass{
 	
-	HomePage hp=new HomePage(driver);
+	HomePage hp;
 	
-	@BeforeMethod
+	@BeforeSuite
 	public void baseClassNavigation() throws IOException
 	{
+	
 		driver=initializeDriver();
 		driver.get("https://www.makemytrip.com/");
 		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();			
+		driver.manage().deleteAllCookies();	
+		hp=new HomePage(driver);
 	}
 	
 	@Test(priority=1)
@@ -36,11 +33,12 @@ public class HomePageTest extends baseClass{
 	}
 	
 	@Test(priority=2)
-	public void verifyLangCurrencyCountryDropdown()
+	public void verifyLangCurrencyCountryDropdown() throws InterruptedException
 	{
-		
+		hp.clickRuntimeAutoPopup().click();
+		Thread.sleep(2000);
 		boolean dropdownIsDisplayed=hp.verifyLangCurrencyCountry().isDisplayed();
-		System.out.println(dropdownIsDisplayed);
+		System.out.println("verifyLangCurrencyCountryDropdown: ,Expected Value: true, Actual value: " + dropdownIsDisplayed);
 		hp.verifyLangCurrencyCountry().click();
 		
 	}
@@ -58,9 +56,10 @@ public class HomePageTest extends baseClass{
 
 		boolean buttonIsDisplayed=hp.serachButton().isDisplayed();
 		System.out.println("verifySearchButton: ,Expected Value: true, Actual value: " + buttonIsDisplayed);
+		hp.serachButton().click();
 	}
 	
-	@AfterMethod
+	@AfterSuite
 	public void tearDown()
 	{
 		driver.close();

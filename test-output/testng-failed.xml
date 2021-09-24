@@ -6,7 +6,6 @@
       <class name="com.makemytrip.TestCases.HomePageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyLogo"/>
           <include name="baseClassNavigation"/>
           <include name="verifyLangCurrencyCountryDropdown"/>
           <include name="verifySearchButton"/>
